@@ -1,0 +1,18 @@
+*{
+    text-decoration: none;
+}
+.navbar{
+    background: #1d3354ff; font-family: calibri; padding-right: 15px;padding-left: 15px;
+}
+.navdiv{
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo a{
+    font-size: 35px; font-weight: 600; color: #f1dedeff;
+}
+li{
+    list-style: none; display: inline-block;
+}
+li a{
+    color: #f1dedeff; font-size: 18px; font-weight: bold; margin-right: 25px;
+}
