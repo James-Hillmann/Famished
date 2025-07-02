@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./styles/Login.css";
 function Login({ onButtonPress }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -12,23 +12,30 @@ function Login({ onButtonPress }) {
     };
 
     return (
-        <form onSubmit={handleLogin}>
+        <form className="login-form" onSubmit={handleLogin}>
             <input
+                className="input-email"
                 type="text"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
             <input
+                className="input-password"
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" name="login">
+            <button className="btn-login" type="submit" name="login">
                 Login
             </button>
-            <button type="submit" name="createAccount">
+            or
+            <button
+                className="btn-create-account"
+                type="submit"
+                name="createAccount"
+            >
                 Create Account
             </button>
         </form>

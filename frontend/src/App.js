@@ -2,6 +2,7 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
+import "./styles/App.css";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
 import Login from "./Login";
@@ -49,15 +50,17 @@ function App() {
     };
 
     return (
-        <div>
-            <div>
+        <div className="container">
+            <div className="current-account">
                 {currentUser ? (
                     <p>Logged in as: {currentUser.email}</p>
                 ) : (
                     <p>No user is logged in.</p>
                 )}
             </div>
-            <Login onButtonPress={handleAccounts} />
+            <div>
+                <Login onButtonPress={handleAccounts} />
+            </div>
         </div>
     );
 }

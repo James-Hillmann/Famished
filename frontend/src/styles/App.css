@@ -1,0 +1,6 @@
+.current-account {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 5vh;
+}
