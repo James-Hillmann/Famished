@@ -30,7 +30,7 @@ function Login({ onButtonPress }) {
             <button className="btn-login" type="submit" name="login">
                 Login
             </button>
-            or
+            or t
             <button
                 className="btn-create-account"
                 type="submit"
