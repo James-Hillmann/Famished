@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles/Login.css";
+import "../styles/Login.css";
 function Login({ onButtonPress }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -30,7 +30,7 @@ function Login({ onButtonPress }) {
             <button className="btn-login" type="submit" name="login">
                 Login
             </button>
-            or t
+            or
             <button
                 className="btn-create-account"
                 type="submit"

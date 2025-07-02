@@ -2,10 +2,12 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Hello from "./pages/hello";
 import "./styles/App.css";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
-import Login from "./Login";
+import Login from "./pages/Login";
 import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
@@ -50,16 +52,27 @@ function App() {
     };
 
     return (
-        <div className="container">
-            <div className="current-account">
-                {currentUser ? (
-                    <p>Logged in as: {currentUser.email}</p>
-                ) : (
-                    <p>No user is logged in.</p>
-                )}
-            </div>
-            <div>
-                <Login onButtonPress={handleAccounts} />
+        <div>
+            <Router>
+                <nav>
+                    <Link to="/login">Hello</Link>
+                </nav>
+                <Routes>
+                    <Route path="/about" element={<Hello />} />
+                </Routes>
+            </Router>
+
+            <div className="container">
+                <div className="current-account">
+                    {currentUser ? (
+                        <p>Logged in as: {currentUser.email}</p>
+                    ) : (
+                        <p>No user is logged in.</p>
+                    )}
+                </div>
+                <div>
+                    <Login onButtonPress={handleAccounts} />
+                </div>
             </div>
         </div>
     );
