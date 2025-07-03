@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     onAuthStateChanged,
 } from "firebase/auth";
-import "../styles/Login.css";
+import "./Login.css";
 
 function Login() {
     const [email, setEmail] = useState("");
