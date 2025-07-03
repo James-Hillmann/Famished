@@ -43,8 +43,18 @@ function Login() {
     const handleSignup = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log("Signup success:", userCredential.user);
-                alert("Account created!");
+                fetch("http://localhost:5000/add-user", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        username: null,
+                        uid: userCredential.user.uid,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        alert(data.message);
+                    });
             })
             .catch((error) => {
                 console.error("Signup error:", error.message);
